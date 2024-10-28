@@ -1,0 +1,16 @@
+{
+  "name": "softwire-work-experience-oct-24",
+  "version": "1.0.0",
+  "description": "a tetris game built with javascript, css and html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LadunOmideyiSoftwire/softwire-work-experience-oct-24.git"
+  },
+  "author": "\"Ladun Omideyi <ladun.omideyi@softwire.com>",
+  "license": "MIT"
+}
