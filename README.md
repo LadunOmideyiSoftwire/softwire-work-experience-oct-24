@@ -72,14 +72,14 @@ We all need to create a local copy of the code before you can make changes to it
     ```
     git clone https://github.com/LadunOmideyiSoftwire/softwire-work-experience-oct-24.git
     ```
-This tells `git` to `clone` the repository i.e. create a copy of the code on your laptop at `C:\Users\Administrator\softwire-work-experience-oct-2024`.
+This tells `git` to `clone` the repository i.e. create a copy of the code on your laptop at `C:\Users\Administrator\softwire-work-experience-oct-24`.
 
 ### Open the project in VS Code
 On the same powershell window, execute the following command
 ```
-code softwire-work-experience-oct-2024
+code softwire-work-experience-oct-24
 ```
-This tells VS Code (`code`) to open the new folder `softwire-work-experience-feb-2024`.
+This tells VS Code (`code`) to open the new folder `softwire-work-experience-oct-24`.
 You should now see the project in VS Code. 
 
 
@@ -123,7 +123,7 @@ This means that the code is running on your own computer and you can access it i
 |----------------------|--------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | Trello Board         | To keep track of tasks and their statuses                    | [here](https://trello.com/invite/b/671ec59a322c9dcd5a7f78a8/ATTI36b0bf801bed030c6da765e469a36c72012FAF15/softwire-work-experience-october-2024) |
 | GitHub repo          | Central location for all of our code                         | [here](https://github.com/LadunOmideyiSoftwire/softwire-work-experience-oct-24)                                                |
-| Live site (frontend) | Where our current `main` branch code is running the frontend | https://softwire-work-experience-oct-2024.vercel.app/                                                                  |
+| Live site (frontend) | Where our current `main` branch code is running the frontend | https://softwire-work-experience-oct-24.vercel.app/                                                                  |
 
 ### Useful HTML/CSS/JavaScript Guides
 
@@ -162,7 +162,7 @@ written in HTML/CSS/JavaScript.
 - JavaScript is used to control the behaviour of different elements on the page
 
 When running (either on Vercel or locally), the files in the frontend directory are available at `<siteurl>/<filename>`. 
-For example, `src/game.html` is available at `https://softwire-work-experience-oct-2024.vercel.app/game` or `http://localhost:3000/game`. The `src/index.html` is special in the sense that it can be accessed through `https://softwire-work-experience-oct-2024.vercel.app` or `http://localhost:3000` without specifying `index`.
+For example, `src/game.html` is available at `https://softwire-work-experience-oct-24.vercel.app/game` or `http://localhost:3000/game`. The `src/index.html` is special in the sense that it can be accessed through `https://softwire-work-experience-oct-24.vercel.app` or `http://localhost:3000` without specifying `index`. 
 
 Lots of websites use frameworks or libraries rather than "Vanilla JavaScript" to put together the site (you may have 
 heard of React, Angular, Vue.js or many more, for example). These provide useful in-build functionality that makes it
