@@ -11,17 +11,18 @@
 | 12:00     | Presentation: Git and Github                                                   |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Code development                                                               |
+| 14:00     | Pairing session                                                                |
 | 15:00     | Guest Presentation: Apprenticeships (Joseph Walker)                            |
 | 15:30     | Code development                                                               |
 | 16:00     | End of Day                                                                     |
 | Tuesday   |                                                                                |
 | 10:00     | Standup                                                                        |
 | 10:30     | Presentation: HTML/CSS/JS                                                      |
-| 11:00     | Code Development                                                               |
 | 11:00     | Guest Presentation: What It Means To Be A UX Designer (Gabi Mikolajczak)       |
 | 11:30     | Code development                                                               |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Code development                                                               |
+| 16:00     | End of Day                                                                     |
 | 16:00     | End of Day                                                                     |
 | Wednesday |                                                                                |
 | 10:00     | Standup                                                                        |
