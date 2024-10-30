@@ -29,3 +29,9 @@ button {
         margin-right: auto;
         width: 40%;
 }
+
+#mycanvas {
+}
+.grid {
+    text-align:center;
+}
