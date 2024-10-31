@@ -62,3 +62,6 @@ function rendergrid(gamegrid) { // renders the gamegrid
 }
 
 rendergrid(gamegrid); // Render the grid after placing a piece
+
+
+
