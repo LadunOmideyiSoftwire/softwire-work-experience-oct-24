@@ -20,17 +20,18 @@ img {
     width: 40%;
   }
 button {
-    background-color: #baba00; /* Blue */;
+    background-color: #ec8fc9; /* Blue */;
     font-size:  40px;
     border-radius: 50%;
-        text-align:center;
+        text-align:centre;
         display: block;
-        margin-left: auto;
+        margin-left: left;
         margin-right: auto;
-        width: 40%;
+        width: 20%;
 }
 
 #mycanvas {
+       
 }
 .grid {
     text-align:center;
