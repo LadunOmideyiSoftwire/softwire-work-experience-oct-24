@@ -1,64 +1,73 @@
-const gridrows = 20;
-const gridcols = 10;
-const gamegrid = Array.from({ length: gridrows }, () => Array(gridcols).fill(0));
+const gridRows = 20;
+const gridCols = 10;
+const gameGrid = Array.from({ length: gridRows }, () => Array(gridCols).fill(0));
 
-const tetrispiece = [ // creates all possible pieces and various colours
-    { shape: [[1, 1, 1, 1]], colour: 'cerulean blue' },
-    { shape: [[1, 1], [1, 1]], colour: 'honey yellow' },
-    { shape: [[1, 1, 1], [1, 0, 0]], colour: 'flurescent pink' },
-    { shape: [[1, 1, 1], [0, 0, 1]], colour: 'brick red' },
-    { shape: [[1, 1, 1], [0, 1, 0]], colour: 'mint green' },   
-    { shape: [[1, 1, 0], [0, 1, 1]], colour: 'bauge' },
-    { shape: [[0, 1, 1], [1, 1, 0]], colour: 'rose gold' }
+const tetrisPiece = [ // creates all possible pieces and various colours
+    { shape: [[1, 1, 1, 1]], colour: 'blue' },
+    { shape: [[1, 1], [1, 1]], colour: 'yellow' },
+    { shape: [[1, 1, 1], [1, 0, 0]], colour: 'pink' },
+    { shape: [[1, 1, 1], [0, 0, 1]], colour: 'red' },
+    { shape: [[1, 1, 1], [0, 1, 0]], colour: 'green' },   
+    { shape: [[1, 1, 0], [0, 1, 1]], colour: 'maroon' },
+    { shape: [[0, 1, 1], [1, 1, 0]], colour: 'orange' }
 ];
 
 function getrandompiece() { // creates a random piece and returns it
-    const randomint = Math.floor(Math.random() * tetrispiece.length);
-    return tetrispiece[randomint];
+    const randomInt = Math.floor(Math.random() * tetrisPiece.length);
+    return tetrisPiece[randomInt];
 }
 
-const Randompiece = getrandompiece(); // randomizes each piece and corresponding
-console.log("random tetris piece:", Randompiece.shape);
-console.log("random tetris colour:", Randompiece.colour);
+const randomPiece = getrandompiece(); // randomizes each piece and corresponding
+console.log("random tetris piece:", randomPiece.shape);
+console.log("random tetris colour:", randomPiece.colour);
+let randomPieceColour = randomPiece.colour;
 
-function placepiece(cols, rows, piece, gamegrid) { // places a piece in the game grid
+function placePiece(cols, rows, piece, gameGrid) { // places a piece in the game grid
     for (let i = 0; i < piece.shape.length; i++) {
         for (let j = 0; j < piece.shape[i].length; j++) {
             if (piece.shape[i][j]) {
-                gamegrid[rows + i][cols + j] = 1; // Correctly place the piece
+                gameGrid[rows + i][cols + j] = colourLetter(randomPiece); // Correctly place the piece so that where block occupies is first letter of colour
             }
         }
     }
 }
 
-function canplacepiece(cols, rows, piece) { // checks if a piece can be placed
+function colourLetter(randomPiece) { 
+    let firstLetter = randomPieceColour[0];
+    return firstLetter
+}
+
+function canPlacePiece(cols, rows, piece) { // checks if a piece can be placed
     for (let i = 0; i < piece.shape.length; i++) {
         for (let j = 0; j < piece.shape[i].length; j++) {
             if (piece.shape[i][j] && 
-                (gamegrid[rows + i] === undefined || 
-                 gamegrid[rows + i][cols + j] === undefined || 
-                 gamegrid[rows + i][cols + j] !== 0)) {
+                (gameGrid[rows + i] === undefined || 
+                 gameGrid[rows + i][cols + j] === undefined || 
+                 gameGrid[rows + i][cols + j] !== 0)) {
                 return false; // Cannot place
             }
+            if (rows + i >= gridRows || cols + j >= gridCols){
+                return false //outside grid limits
+            }      
         }
     }
     return true; // Can place
 }
 
-const startrow = 0; // start position for pieces
-const startcol = 4;
+const startRow = 0; // start position for pieces
+const startCol = 4;
 
-if (canplacepiece(startcol, startrow, Randompiece)) { // Check if piece can be placed
-    placepiece(startcol, startrow, Randompiece, gamegrid); // Pass the gamegrid
+if (canPlacePiece(startCol, startRow, randomPiece)) { // Check if piece can be placed
+    placePiece(startCol, startRow, randomPiece, gameGrid); // Pass the gamegrid
     console.log("Piece placed.");
 } else {
     console.log("Cannot place");
 }
 
-function rendergrid(gamegrid) { // renders the gamegrid
-    for (let row of gamegrid) {
+function renderGrid(gameGrid) { // renders the gamegrid
+    for (let row of gameGrid) {
         console.log(row.join(' '));
     }
 }
 
-rendergrid(gamegrid); // Render the grid after placing a piece
+renderGrid(gameGrid); // Render the grid after placing a piece
