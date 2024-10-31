@@ -1,6 +1,6 @@
-let gridrows = 20;
-let gridcols = 10;
-let gamegrid = Array.from({ length: gridrows }, () => Array(gridcols).fill(0));
+const gridrows = 20;
+const gridcols = 10;
+const gamegrid = Array.from({ length: gridrows }, () => Array(gridcols).fill(0));
 
 const tetrispiece = [ // creates all possible pieces and various colours
     { shape: [[1, 1, 1, 1]], colour: 'cerulean blue' },
