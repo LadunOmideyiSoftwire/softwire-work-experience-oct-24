@@ -1,5 +1,5 @@
 
-const tetrispiece = [
+const tetrispieces = [
     { shape: [[1,1,1,1]], colour: 'cerulean blue'},
     { shape: [[1,1], [1,1]], colour: 'honey yellow'},
     { shape: [[1,1,1], [1,0,0]], colour: 'flurescent pink'},
@@ -9,8 +9,8 @@ const tetrispiece = [
     { shape: [[0,1,1], [1,1,0]], colour: 'rose gold'}
 ];
 function getrandompiece(){
-    const randomint = Math.floor(Math.random()*tetrispiece.length);
-    return tetrispiece[randomint];
+    const randomindex = Math.floor(Math.random()*tetrispieces.length);
+    return tetrispieces[randomindex];
 }
 const Randompiece = getrandompiece();
  console.log("random tetris piece:" ,Randompiece.shape);
