@@ -116,5 +116,39 @@ document.addEventListener('keydown', (event) => { // calls the function to execu
     }
 })
 
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.lineWidth = 5;
+ctx.fillStyle = 'orange'; // Set your desired background color
+ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas
 
+const cellHeight = 100;
+const cellWidth = 100;
+const padding = 5;
+let xcoordinate = 0;
+let ycoordinate = 0;
+let cell_fill_colour = "yellow";
+let rows = 20;
+let cols = 10;
+
+function renderGamegrid(gamegrid, rows, cols){
+    for (let i = 0; i < 20; i++) {
+    for (let j = 0; j < 10; j++) {
+        ctx.moveTo(xcoordinate,ycoordinate); 
+
+        // if (gamegrid[rows + i][cols + j] !==0){ 
+        //     ctx.fillStyle = gamegrid[rows + i][cols + j]
+        if (xcoordinate > 200) { ctx.fillStyle = "green"
+             } 
+            else
+            {ctx.fillStyle = cell_fill_colour;}
+        ctx.fillRect(xcoordinate,ycoordinate, cellWidth,cellHeight);  
+        xcoordinate += cellWidth;
+        console.log(xcoordinate,ycoordinate, cellWidth,cellHeight)
+        }
+    xcoordinate = 0
+    ycoordinate += cellHeight;
+    console.log(xcoordinate,ycoordinate);
+    }
+}
 
