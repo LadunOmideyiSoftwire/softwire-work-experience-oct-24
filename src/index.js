@@ -25,7 +25,7 @@ let randomPieceColour = randomPiece.colour;
 function placePiece(cols, rows, piece, gameGrid) { // places a piece in the game grid
     for (let i = 0; i < piece.shape.length; i++) {
         for (let j = 0; j < piece.shape[i].length; j++) {
-            if (piece.shape[i][j]) {
+            if (piece.shape[i][j] === 1) {
                 gameGrid[rows + i][cols + j] = colourLetter(randomPiece); // Correctly place the piece so that where block occupies is first letter of colour
             }
         }
