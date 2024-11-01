@@ -1,38 +1,34 @@
 h1 {
     color: rgb(3, 148, 35);
-    font-style: oblique;text-shadow:color-mix(in hwb longer hue, color percentage, color percentage);
+    font-style: oblique;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-  }
+}
 body {
-    background-image: url("assets/tetris background.png");
+    background-image: url("public/tetris-background.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-
-  } 
+} 
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-  }
+}
 button {
-    background-color: #ec8fc9; /* Blue */;
+    background-color: #baba00; /* Yellow */;
     font-size:  40px;
     border-radius: 50%;
-        text-align:centre;
-        display: block;
-        margin-left: left;
-        margin-right: auto;
-        width: 20%;
-}
-
-#mycanvas {
-       
-}
-.grid {
     text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+.title_image {
+    width:400px;
+    height:200px;
 }

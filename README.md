@@ -11,23 +11,24 @@
 | 12:00     | Presentation: Git and Github                                                   |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Code development                                                               |
+| 14:00     | Pairing session (Sammy Young)                                                  |
 | 15:00     | Guest Presentation: Apprenticeships (Joseph Walker)                            |
 | 15:30     | Code development                                                               |
 | 16:00     | End of Day                                                                     |
 | Tuesday   |                                                                                |
 | 10:00     | Standup                                                                        |
 | 10:30     | Presentation: HTML/CSS/JS                                                      |
-| 11:00     | Code Development                                                               |
 | 11:00     | Guest Presentation: What It Means To Be A UX Designer (Gabi Mikolajczak)       |
 | 11:30     | Code development                                                               |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Code development                                                               |
+| 16:00     | Live JS Presentation (Sammy Young)                                             |
 | 16:00     | End of Day                                                                     |
 | Wednesday |                                                                                |
 | 10:00     | Standup                                                                        |
 | 10:30     | Presentation: HTTP Requests and Backend Development                            |
 | 11:00     | Code development                                                               |
-| 12:00     | Guest presentation: TBC                                                        |
+| 12:00     | Guest presentation: Operating Systems (Atakan Cole)                            |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Code development                                                               |
 | 16:00     | End of Day                                                                     |
@@ -38,17 +39,15 @@
 | 11:30     | Code development                                                               |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Code development                                                               |
-| 14:00     | Presentation: DevOps: How is our Tetris site hosted?                           |
-| 14:00     | Code development                                                               |
 | 16:00     | End of Day                                                                     |
 | Friday    |                                                                                |
 | 10:00     | Standup                                                                        |
 | 10:30     | Code development                                                               |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Presentation Prep                                                              |
-| 14:30     | Presentation                                                                   |
+| 14:00     | Presentation                                                                   |
 | 15:00     | Retro                                                                          |
-| 15:00     | Fun and game                                                                   |
+| 15:30     | Fun and games!                                                                 |
 | 16:00     | End of Day                                                                     |
 
 
