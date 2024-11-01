@@ -65,7 +65,7 @@ if (canPlacePiece(startCol, startRow, randomPiece)) { // Check if piece can be p
 }
 
 function renderGrid(gameGrid) { // renders the gamegrid
-    for (let row of gameGrid) {
+    for (const row of gameGrid) {
         console.log(row.join(' '));
     }
 }
