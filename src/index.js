@@ -61,7 +61,7 @@ if (canplacepiece(startcol, startrow, Randompiece)) { // Check if piece can be p
 //     }
 // }
 
-rendergrid(gamegrid); // Render the grid after placing a piece
+// rendergrid(gamegrid); // Render the grid after placing a piece
 
 function renderGamegrid(gamegrid, rows, cols){
     const canvas = document.getElementById("myCanvas");
@@ -76,45 +76,39 @@ function renderGamegrid(gamegrid, rows, cols){
     let xcoordinate = 0;
     let ycoordinate = 0;
     let cell_fill_colour = "yellow";
-    let rows = 20;
-    let cols = 10;
 
-    for (let i = 0; i < 20; i++) {
-    for (let j = 0; j < 10; j++) {
+for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
         ctx.moveTo(xcoordinate,ycoordinate); 
 
-        if (gamegrid[rows + i][cols + j] !==0){ 
-            ctx.fillStyle = gamegrid[rows + i][cols + j]
-        // if (xcoordinate > 200) { ctx.fillStyle = "green"
+        if (gamegrid[i][j] !==0){ 
+            ctx.fillStyle = "green"
              } 
             else
             {ctx.fillStyle = cell_fill_colour;}
         ctx.fillRect(xcoordinate,ycoordinate, cellWidth,cellHeight);  
         xcoordinate += cellWidth;
-        console.log(xcoordinate,ycoordinate, cellWidth,cellHeight)
         }
     xcoordinate = 0
     ycoordinate += cellHeight;
-    console.log(xcoordinate,ycoordinate);
     }
 }
 
-
-
-let piecePosition = {x: 4, y: 0}
-function MovePiece(direction){ // function that moves the piece
-    switch (direction) {
-        case 'left':
-            piecePosition.x -= 1;
-            break;
-        case 'right':
-            piecePosition.x += 1;
-            break;
-        case 'down':
-            piecePosition.y += 1;
-            break; 
-    }
-}
+renderGamegrid(gamegrid, gridrows,gridcols);
+// let piecePosition = {x: 4, y: 0}
+// function MovePiece(direction){ // function that moves the piece
+//     switch (direction) {
+//         case 'left':
+//             piecePosition.x -= 1;
+//             break;
+//         case 'right':
+//             piecePosition.x += 1;
+//             break;
+//         case 'down':
+//             piecePosition.y += 1;
+//             break; 
+//     }
+// }
 
 function collision(){ // checks if pieces are touching and stops them from colliding
     for(let rows = 0; rows < currentPiece.shape.length; rows++){
