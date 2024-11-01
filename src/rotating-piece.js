@@ -85,7 +85,7 @@ function rotatepiece(tetrisPiece, direction) {
         } else if (tetrisPiece = [[0, 0, 1], [1, 1, 1]]) {
             tetrisPiece = [[0, 1, 0], [0, 1, 0], [0, 1, 1]]
         } else if (tetrisPiece = [[0, 1, 0], [0, 1, 0], [0, 1, 1]]) {
-            tetrisPiece = [[1, 1, 1, 1]] 
+            tetrisPiece = [[1, 1, 1],[1, 0, 0]] 
         }
         if (tetrisPiece = [[1, 1, 1], [0, 0, 1]]){ //reverse L block rotation
             tetrisPiece = [[0, 1, 0], [0, 1, 0], [1, 1, 0]]
