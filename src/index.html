@@ -9,12 +9,30 @@
   <body>
     <img src="assets/tetris title image.png" alt="TETRIS" style="width:800px;height:400px;">
     <h1>Play the game and get a high score!</h1>
-    <button type="button" onclick="alert('Hello Tetris player!')">Start game</button>
-    <div class="grid"> 
-      <canvas id="myCanvas" width="1010" height="2010" style="border:1px solid #000000;">
-        Your browser does not support the HTML canvas tag.
-        </canvas>
+  
+    <div class="flex-container">
+      <div class="button-container">
+        <button type="button" onclick="alert('Hello Tetris player!')">Start game</button>
+      </div>  
+      <div class="grid-container">
+          <div class="grid"> 
+            <canvas id="myCanvas" width="1010" height="2010" style="border:1px solid #000000;">
+              Your browser does not support the HTML canvas tag.
+              </canvas>
+          </div>
+        </div>
+        <div class="instructions-container">
+          <div class="instructions">Instructions:
+            Arrange falling blocks to form complete horizontal lines. When a line is completed, it clears, and you earn points. The game ends when the blocks stack up to the top of the screen.
+            Left/right: move the falling blocks left or right
+            Down: drop the block faster
+            Rotate: rotate the block clockwise or anticlockwise to fit into gaps
+            Ready to Tetris?
+          </div>
+        </div>
     </div>
+    
+     
   </body>
 </html>
 
@@ -56,4 +74,8 @@ function renderGamegrid(gamegrid, rows, cols){
 }
 
 }
+renderGamegrid();
+
 </script> 
+
+ 
