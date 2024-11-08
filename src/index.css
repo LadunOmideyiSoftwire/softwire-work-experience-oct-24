@@ -4,7 +4,7 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    text-align: center;
 }
 body {
     background-image: url("assets/tetris-background.png");
@@ -19,14 +19,16 @@ img {
     width: 40%;
 }
 button {
-    background-color: #baba00; /* Yellow */;
+    background-color: #39FF14; /* Pink */;
     font-size:  40px;
+    width: 300px;
+    height: 150px;
     border-radius: 50%;
-    text-align:center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
+        text-align:centre;
+        display: block;
+        margin-left: left;
+        margin-right: auto;
+        width: 85%;
 }
 .title_image {
     width:400px;
@@ -35,4 +37,19 @@ button {
 
 .grid {
     text-align:center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+  }
+
+.instructions{
+background-color: rgb(208, 110, 193);
+width:100px;
+border: 15px solid green;
+padding: 50px;
+margin: 20px;
+border: 10px solid rgb(199, 130, 39);
+text-align:center;
 }
