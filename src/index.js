@@ -1,33 +1,33 @@
-// global variables
-let gridrows = 20;
-let gridcols = 10;
-let gamegrid = Array.from({ length: gridrows }, () => Array(gridcols).fill(0));
+// Global variables
+let gridRows = 20;
+let gridCols = 10;
+let gameGrid = Array.from({ length: gridRows }, () => Array(gridCols).fill(0));
 
 // Tetris pieces with shapes and colors
-const tetrispiece = [
-    { shape: [[1, 1, 1, 1]], colour: 'blue' },
-    { shape: [[1, 1], [1, 1]], colour: 'orange' },
-    { shape: [[1, 1, 1], [1, 0, 0]], colour: 'pink' },
-    { shape: [[1, 1, 1], [0, 0, 1]], colour: 'red' },
-    { shape: [[1, 1, 1], [0, 1, 0]], colour: 'green' },
-    { shape: [[1, 1, 0], [0, 1, 1]], colour: 'brown' },
-    { shape: [[0, 1, 1], [1, 1, 0]], colour: 'gold' }
+const tetrisPiece = [
+    { shape: [[1, 1, 1, 1]], color: 'blue' },
+    { shape: [[1, 1], [1, 1]], color: 'orange' },
+    { shape: [[1, 1, 1], [1, 0, 0]], color: 'pink' },
+    { shape: [[1, 1, 1], [0, 0, 1]], color: 'red' },
+    { shape: [[1, 1, 1], [0, 1, 0]], color: 'green' },
+    { shape: [[1, 1, 0], [0, 1, 1]], color: 'brown' },
+    { shape: [[0, 1, 1], [1, 1, 0]], color: 'gold' }
 ];
 
 // Piece handling
 
-function getrandompiece() { // Creates a random piece and returns it
-    const randomint = Math.floor(Math.random() * tetrispiece.length);
-    return tetrispiece[randomint];
+function getRandomPiece() { // Creates a random piece and returns it
+    const randomInt = Math.floor(Math.random() * tetrisPiece.length);
+    return tetrisPiece[randomInt];
 }
 
-function canplacepiece(cols, rows, piece, gamegrid) { // Checks if a piece can be placed
+function canPlacePiece(cols, rows, piece, gameGrid) { // Checks if a piece can be placed
     for (let i = 0; i < piece.shape.length; i++) {
         for (let j = 0; j < piece.shape[i].length; j++) {
             if (piece.shape[i][j] &&
-                (gamegrid[rows + i] === undefined ||
-                    gamegrid[rows + i][cols + j] === undefined ||
-                    gamegrid[rows + i][cols + j] !== 0)) {
+                (gameGrid[rows + i] === undefined ||
+                    gameGrid[rows + i][cols + j] === undefined ||
+                    gameGrid[rows + i][cols + j] !== 0)) {
                 return false; // Cannot place
             }
         }
@@ -35,25 +35,25 @@ function canplacepiece(cols, rows, piece, gamegrid) { // Checks if a piece can b
     return true; // Can place
 }
 
-function placepiece(cols, rows, piece, gamegrid) { // Places a piece in the game grid
+function placePiece(cols, rows, piece, gameGrid) { // Places a piece in the game grid
     for (let i = 0; i < piece.shape.length; i++) {
         for (let j = 0; j < piece.shape[i].length; j++) {
             if (piece.shape[i][j]) {
-                gamegrid[rows + i][cols + j] = piece.colour; // Correctly place the piece
+                gameGrid[rows + i][cols + j] = piece.color; // Correctly place the piece
             }
         }
     }
-    return gamegrid;
+    return gameGrid;
 }
 
-function returnNewGridWithPieceMovedDown(startcol, startrow, piece, gridrows, gridcols) {
-    let newGrid = Array.from({ length: gridrows }, () => Array(gridcols).fill(0));
-    startrow += 1; // Move start row down by one
+function returnNewGridWithPieceMovedDown(startCol, startRow, piece, gridRows, gridCols) {
+    let newGrid = Array.from({ length: gridRows }, () => Array(gridCols).fill(0));
+    startRow += 1; // Move start row down by one
 
     for (let i = 0; i < piece.shape.length; i++) {
         for (let j = 0; j < piece.shape[i].length; j++) {
             if (piece.shape[i][j]) {
-                newGrid[startrow + i][startcol + j] = piece.colour; // Place piece one row down
+                newGrid[startRow + i][startCol + j] = piece.color; // Place piece one row down
             }
         }
     }
@@ -63,7 +63,7 @@ function returnNewGridWithPieceMovedDown(startcol, startrow, piece, gridrows, gr
 
 // Rendering 
 
-function renderGamegrid(grid, rows, cols) {
+function renderGameGrid(grid, rows, cols) {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
 
@@ -74,48 +74,48 @@ function renderGamegrid(grid, rows, cols) {
 
     const cellHeight = 100;
     const cellWidth = 100;
-    let xcoordinate = 0;
-    let ycoordinate = 0;
-    let cell_fill_colour = "yellow";
+    let xCoordinate = 0;
+    let yCoordinate = 0;
+    let cellFillColor = "yellow";
 
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
-            ctx.moveTo(xcoordinate, ycoordinate);
+            ctx.moveTo(xCoordinate, yCoordinate);
 
             if (grid[i][j] !== 0) {
                 ctx.fillStyle = grid[i][j];
             } else {
-                ctx.fillStyle = cell_fill_colour;
+                ctx.fillStyle = cellFillColor;
             }
-            ctx.fillRect(xcoordinate, ycoordinate, cellWidth, cellHeight);
-            xcoordinate += cellWidth;
+            ctx.fillRect(xCoordinate, yCoordinate, cellWidth, cellHeight);
+            xCoordinate += cellWidth;
         }
-        xcoordinate = 0;
-        ycoordinate += cellHeight;
+        xCoordinate = 0;
+        yCoordinate += cellHeight;
     }
 }
 
 function renderPieceOnGameGrid() {
-    let grid = Array.from({ length: gridrows }, () => Array(gridcols).fill(0));
-    let Randompiece = getrandompiece();
-    console.log("random tetris piece:", Randompiece.shape);
-    console.log("random tetris colour:", Randompiece.colour);
+    let grid = Array.from({ length: gridRows }, () => Array(gridCols).fill(0));
+    let randomPiece = getRandomPiece();
+    console.log("random tetris piece:", randomPiece.shape);
+    console.log("random tetris color:", randomPiece.color);
 
-    let startcol = 4;
-    let startrow = 0;
+    let startCol = 4;
+    let startRow = 0;
 
-    renderGamegrid(grid, gridrows, gridcols);
+    renderGameGrid(grid, gridRows, gridCols);
 
     // Initial placement
-    let updatedGrid = placepiece(startcol, startrow, Randompiece, grid);
+    let updatedGrid = placePiece(startCol, startRow, randomPiece, grid);
     console.log("Initial placement:", updatedGrid);
 
-    renderGamegrid(updatedGrid, gridrows, gridcols);
+    renderGameGrid(updatedGrid, gridRows, gridCols);
 
     setTimeout(() => {
         // Move the piece down by one row
-        updatedGrid = returnNewGridWithPieceMovedDown(startcol, startrow, Randompiece, gridrows, gridcols);
-        renderGamegrid(updatedGrid, gridrows, gridcols);
+        updatedGrid = returnNewGridWithPieceMovedDown(startCol, startRow, randomPiece, gridRows, gridCols);
+        renderGameGrid(updatedGrid, gridRows, gridCols);
     }, 500);
 }
 
